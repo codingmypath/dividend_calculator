@@ -60,9 +60,6 @@ const AddEdit = () => {
         setState({...state, [name]: value})
     }
 
-    const fetchData = (value) => {
-        fetch("")
-    }
 
     return (
         <div className="addEditContainer">
