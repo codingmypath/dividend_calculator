@@ -10,11 +10,11 @@ const Home = () => {
 
 
     const loadData = async () => {
-        const response = await axios.get("http://localhost:3009/api/get");
+        const response = await axios.get("/api/get");
         setData(response.data);
 
         async function getCat() {
-            const respOne = await fetch("http://localhost:3009/api/get");
+            const respOne = await fetch("/api/get");
             const cat = await respOne.json(); 
     
             const childRes = await Promise.all( 
@@ -98,7 +98,7 @@ const Home = () => {
     const deleteContact = (id) => {
         console.log("ID", id)
         if(window.confirm("Are you sure that you want to delete?")) {
-            axios.delete(`http://localhost:3009/api/remove/${id}`);
+            axios.delete(`/api/remove/${id}`);
             toast.success("Contact Deleted Successfully");
             setTimeout(() => loadData(), 500);
         }

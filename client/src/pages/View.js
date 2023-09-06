@@ -17,7 +17,7 @@ const View = () => {
     
     useEffect(() => {
 
-        fetch(`http://localhost:3009/api/get/${id}`)
+        fetch(`/api/get/${id}`)
         .then(response => {
             return response.json();
         })

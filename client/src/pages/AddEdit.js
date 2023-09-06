@@ -18,7 +18,7 @@ const AddEdit = () => {
     const {id} = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:3009/api/get/${id}`)
+        axios.get(`/api/get/${id}`)
         .then((resp) => setState({...resp.data[0]}));
 
     }, [id]);
@@ -30,7 +30,7 @@ const AddEdit = () => {
             toast.error("Please provide value into each input field");
         } else {
             if (!id) {
-                axios.post("http://localhost:3009/api/post", {
+                axios.post("/api/post", {
                 stock, 
                 shares,
             
@@ -39,7 +39,7 @@ const AddEdit = () => {
                 }).catch((err) => toast.error(err.response.data));
                 toast.success("Contact Added Successfully")
             } else {
-                axios.put(`http://localhost:3009/api/update/${id}`, {
+                axios.put(`/api/update/${id}`, {
                 stock, 
                 shares,
     
