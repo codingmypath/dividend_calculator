@@ -10,11 +10,11 @@ const Home = () => {
 
 
     const loadData = async () => {
-        const response = await axios.get("https://mydividendtracker.netlify.app/api/get");
+        const response = await axios.get("https://my-dividend-tracker.onrender.com/api/get");
         setData(response.data);
 
         async function getCat() {
-            const respOne = await fetch("https://mydividendtracker.netlify.app/api/get");
+            const respOne = await fetch("https://my-dividend-tracker.onrender.com/api/get");
             const cat = await respOne.json(); 
     
             const childRes = await Promise.all( 

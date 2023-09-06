@@ -17,7 +17,7 @@ const View = () => {
     
     useEffect(() => {
 
-        fetch(`/api/get/${id}`)
+        fetch(`https://my-dividend-tracker.onrender.com/api/get/${id}`)
         .then(response => {
             return response.json();
         })

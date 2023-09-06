@@ -30,7 +30,7 @@ const AddEdit = () => {
             toast.error("Please provide value into each input field");
         } else {
             if (!id) {
-                axios.post("/api/post", {
+                axios.post("https://my-dividend-tracker.onrender.com/api/post", {
                 stock, 
                 shares,
             
@@ -39,7 +39,7 @@ const AddEdit = () => {
                 }).catch((err) => toast.error(err.response.data));
                 toast.success("Contact Added Successfully")
             } else {
-                axios.put(`/api/update/${id}`, {
+                axios.put(`https://my-dividend-tracker.onrender.com/api/update/${id}`, {
                 stock, 
                 shares,
     
