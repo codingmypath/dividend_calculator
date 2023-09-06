@@ -10,11 +10,11 @@ const Home = () => {
 
 
     const loadData = async () => {
-        const response = await axios.get("/api/get");
+        const response = await axios.get("https://mydividendtracker.netlify.app/api/get");
         setData(response.data);
 
         async function getCat() {
-            const respOne = await fetch("/api/get");
+            const respOne = await fetch("https://mydividendtracker.netlify.app/api/get");
             const cat = await respOne.json(); 
     
             const childRes = await Promise.all( 
@@ -98,7 +98,7 @@ const Home = () => {
     const deleteContact = (id) => {
         console.log("ID", id)
         if(window.confirm("Are you sure that you want to delete?")) {
-            axios.delete(`/api/remove/${id}`);
+            axios.delete(`https://mydividendtracker.netlify.app/api/remove/${id}`);
             toast.success("Contact Deleted Successfully");
             setTimeout(() => loadData(), 500);
         }
