@@ -104,16 +104,18 @@ const Home = () => {
         }
     }
 
-    let totalDiv = 0;
-    for (let i = 0; i < data.length; i++) {
-        totalDiv = (stockApi[i].dividend * data[i].shares) + totalDiv;
-    }
 
     if (stockApi.length > 0) {
     let sum = 0;
     stockApi.forEach(num => {
         sum += num.dividend;
     })
+
+    let totalDiv = 0;
+    for (let i = 0; i < data.length; i++) {
+        totalDiv = (stockApi[i].dividend * data[i].shares) + totalDiv;
+    }
+
     console.log("SUM", sum)
 
     return (
