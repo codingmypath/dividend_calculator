@@ -104,6 +104,11 @@ const Home = () => {
         }
     }
 
+    let totalDiv = 0;
+    for (let i = 0; i < data.length; i++) {
+        totalDiv = (stockApi[i].dividend * data[i].shares) + totalDiv;
+    }
+
     if (stockApi.length > 0) {
     let sum = 0;
     stockApi.forEach(num => {
@@ -157,6 +162,12 @@ const Home = () => {
                         )
                     })}
                 </tbody>
+                <tr className="totalDiv">
+                    <th>Total</th>
+                    <td></td>
+                    <td></td>
+                    <td>${totalDiv}</td>
+                </tr>
             </table>
         </div>
     )

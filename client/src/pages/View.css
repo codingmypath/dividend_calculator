@@ -9,6 +9,7 @@
     flex-direction: column;
     align-content: center;
     margin: 0 auto;
+    padding-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
