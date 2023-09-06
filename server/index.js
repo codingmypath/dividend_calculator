@@ -5,14 +5,19 @@ const cors = require('cors');
 const mysql = require('mysql2')
 const PORT = process.env.PORT || 3009;
 
-console.log("my", process.env.MYSQL_DATABASE)
 
-const db = mysql.createPool({
-    host: process.env.MYSQL_HOST,
-    user: "root",
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
-});
+const db = mysql.createConnection(process.env.DATABASE_URL)
+console.log('Connected to PlanetScale!')
+// connection.end()
+
+
+// const db = mysql.createPool({
+//     host: process.env.MYSQL_HOST,
+//     user: process.env.MYSQL_USER,
+//     password: process.env.MYSQL_PASSWORD,
+//     database: process.env.MYSQL_DATABASE
+// });
+
 
 
 app.use(cors());
@@ -90,7 +95,7 @@ app.put("/api/update/:id", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    // const sqlInsert = "INSERT INTO dividend_db (stock, name, shares, total) VALUES ('aapl', 'Apple', 1, 5)";
+    // const sqlInsert = "INSERT INTO dividend_db (stock, shares) VALUES ('aapl', 1)";
     // db.query(sqlInsert, (err, result) => {
     //     console.log("error", err);
     //     console.log("result", result);
