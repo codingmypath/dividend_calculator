@@ -19,7 +19,7 @@ const Home = () => {
     
             const childRes = await Promise.all( 
                 cat.map(id => 
-                    fetch(`https://bored-jade-caterpillar.cyclic.cloud/api/${id.stock}`) // Changed from https://stockapi-rskk.onrender.com
+                    fetch(`https://stockapi-rskk.onrender.com/api/${id.stock}`)
                 )
             );
             // console.log("child", childRes)
@@ -175,7 +175,9 @@ const Home = () => {
     )
     } else {
         return (
-            <h2 className='loading'>Loading...</h2>
+            <div>
+                <h2 className='loading'>Loading...</h2>
+            </div>
         )
     }
 }
