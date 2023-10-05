@@ -22,7 +22,8 @@
     font-size: 0.9em;
     font-family: sans-serif;
     max-width: 800px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15)
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 50px;
 }
 
 .styled-table thead tr {
@@ -79,4 +80,8 @@
 .totalDiv {
     font-weight: bold;
     color: #019e01;
+}
+
+.loading {
+    padding-bottom: 0;
 }

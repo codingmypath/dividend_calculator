@@ -176,7 +176,8 @@ const Home = () => {
     } else {
         return (
             <div>
-                <h2 className='loading'>Loading...</h2>
+                <h2 className='loading'>Please wait..</h2>
+                <h2 className='loading'>Loading may take up to one minute</h2>
             </div>
         )
     }
